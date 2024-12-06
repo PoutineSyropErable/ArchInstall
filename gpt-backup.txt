@@ -1,0 +1,11 @@
+label: gpt
+label-id: BF17CE82-8BB9-4384-82E8-EBF9E9B76576
+device: /dev/nvme0n1
+unit: sectors
+first-lba: 34
+last-lba: 3907029134
+sector-size: 512
+
+/dev/nvme0n1p1 : start=        2048, size=      204800, type=C12A7328-F81F-11D2-BA4B-00A0C93EC93B, uuid=38E24038-C02B-4304-BB86-D4264221A48D, name="EFI System Partition"
+/dev/nvme0n1p2 : start=      239616, size=  1878147486, type=EBD0A0A2-B9E5-4433-87C0-68B6B72699C7, uuid=C2595A9A-23A5-49B1-AF9E-DEBE76BAF6CE, name="Basic data partition"
+/dev/nvme0n1p3 : start=  3209588736, size=     1118208, type=DE94BBA4-06D1-4D40-A16A-BFD50179D6AC, uuid=392908CE-5CAA-4120-96A6-088648A36CE3, name="Basic data partition"

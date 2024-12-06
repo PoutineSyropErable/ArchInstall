@@ -1,0 +1,38 @@
+root@sysrescue ~/ArchInstall (master)# sudo fdisk -l /dev/nvme0n1
+Disk /dev/nvme0n1: 1.82 TiB, 2000398934016 bytes, 3907029168 sectors
+Disk model: WD_BLACK SN770 2TB                      
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: BF17CE82-8BB9-4384-82E8-EBF9E9B76576
+
+Device              Start        End    Sectors   Size Type
+/dev/nvme0n1p1       2048     206847     204800   100M EFI System
+/dev/nvme0n1p2     239616 1878387101 1878147486 895.6G Microsoft basic data
+/dev/nvme0n1p3 3209588736 3210706943    1118208   546M Windows recovery environment
+root@sysrescue ~/ArchInstall (master)# sudo parted /dev/nvme0n1p3 unit s print
+Model: NVMe Device (nvme)
+Disk /dev/nvme0n1p3: 1118208s
+Sector size (logical/physical): 512B/512B
+Partition Table: loop
+Disk Flags: 
+
+Number  Start  End       Size      File system  Flags
+ 1      0s     1118207s  1118208s  ntfs
+
+root@sysrescue ~/ArchInstall (master)# sudo parted /dev/nvme0n1 unit s print
+Model: WD_BLACK SN770 2TB (nvme)
+Disk /dev/nvme0n1: 3907029168s
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+Disk Flags: 
+
+Number  Start        End          Size         File system  Name                  Flags
+ 1      2048s        206847s      204800s      fat32        EFI System Partition  boot, esp
+ 2      239616s      1878387101s  1878147486s  ntfs         Basic data partition  msftdata
+ 3      3209588736s  3210706943s  1118208s     ntfs         Basic data partition  diag
+
+root@sysrescue ~/ArchInstall (master)# vim ntfs_recovery.txt
+root@sysrescue ~/ArchInstall (master)# 
+
