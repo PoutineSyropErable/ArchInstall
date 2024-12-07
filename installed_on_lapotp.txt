@@ -286,7 +286,6 @@ razergenie
 redshift
 refind
 rocm-opencl-runtime
-rofi
 rofi-emoji
 rpcbind
 rpcsvc-proto
